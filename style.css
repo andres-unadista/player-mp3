@@ -1,0 +1,128 @@
+:root {
+  --width-player: 350px;
+  --width-playlist: 275px;
+  --background1: #8685a2;
+  --background2: #c1b9d3;
+  --color1: #ffffff;
+  --color2: #ececf3;
+  --color3: #411583;
+  --width-cover: 350px;
+  --height-cover: 350px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.song {
+  width: var(--width-cover);
+  box-shadow: 2px 2px 10px var(--background2);
+  margin: 2em 4em;
+}
+
+.song__art-box {
+  background-image: url('./public/images/scummbar.jpg');
+  height: var(--height-cover);
+  color: white;
+  font-weight: bold;
+}
+
+/* PLAYLIST */
+.song__list {
+  position: absolute;
+}
+
+.song__playlist {
+  width: var(--width-playlist);
+  background-color: white;
+  color: var(--background1);
+  position: absolute;
+  left: var(--width-cover);
+  top: 1em;
+  border: 1px solid var(--background2);
+  box-shadow: 2px 2px 2px var(--background2);
+}
+
+.song__playlist ul {
+  list-style: none;
+  padding: 1em;
+}
+
+.song__playlist ul li {
+  border-bottom: 1px solid var(--background2);
+  padding: 2px 0;
+}
+
+/* END PLAYLIST */
+
+/* COVER ITEMS */
+.song__cover {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.song__time {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.song__icon-playlist {
+  padding: 1em;
+  font-size: 1.5em;
+  align-self: flex-end;
+}
+
+/* END COVER ITEMS */
+
+/* PLAYER */
+.song__controls-box {
+  height: 170px;
+  text-align: center;
+}
+
+.song__controls-header {
+  padding-top: 1.4em;
+  padding-bottom: 2em;
+}
+
+.song__title {
+  font-size: 1.5em;
+}
+
+.song__author {
+  color: var(--background1);
+  font-size: .9em;
+  margin-top: .4em;
+}
+
+.song__controls {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+.song__icon {
+  font-size: 1.5em;
+}
+
+/* END PLAYER */
+
+/* FOOTER */
+.song__status-box {
+  background-color: var(--color2);
+  padding: 1.5em;
+  width: 100%;
+}
+
+.song__description {
+  width: 90%;
+  margin: 0;
+  font-weight: 500;
+  margin: auto;
+  text-align: center;
+}
