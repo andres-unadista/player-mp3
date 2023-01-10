@@ -1,4 +1,4 @@
-import songs from './songs.json';
+import songs from './songs.json' assert {type: "json"};
 
 // elements
 let $iconMenu = document.querySelector('.song__icon-playlist');
