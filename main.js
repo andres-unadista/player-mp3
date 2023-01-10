@@ -13,6 +13,7 @@ let $controlPlayback = document.getElementById('playback');
 let $controlNext = document.getElementById('forward');
 let $iconPause = document.getElementById('pause');
 let $iconPlay = document.getElementById('play');
+let $app = document.getElementById('app');
 let $listPlaylist = document.getElementById('playlist');
 const $audioElement = document.querySelector("#audio");
 
@@ -20,7 +21,9 @@ let music = songs;
 let currentIndexSong = 0;
 let statusMenu = false;
 let statusControl = false;
-let isSuspended = false;
+const widthPlaylist = 275;
+const widthPlayer = 350;
+let isActive = false;
 
 /* EVENTS LISTENERS */
 $controlPlayback.addEventListener('click', handlePlay);
@@ -61,18 +64,14 @@ function handlePlay() {
     toggleElement($iconPause, true);
     toggleElement($iconPlay, false);
     $audioElement.play();
+    isActive = true;
   } else {
     toggleElement($iconPause, false);
     toggleElement($iconPlay, true);
     $audioElement.pause();
+    isActive = false;
   }
   statusControl = !statusControl;
-
-  // audioElement.resume();
-  // audioElement.src =;
-  // audioElement.play();
-  // audioElement.pause();
-  // Math.floor(audioElement.duration)
 }
 
 function handleTimeAudio() {
@@ -99,6 +98,9 @@ function handlePreviousSong() {
 }
 
 function showInfoSong(song) {
+  if (isActive) {
+    handlePlay();
+  }
   $audioElement.pause();
   let background = `url('./public/images/${song.image}')`;
   $songBackground.style.backgroundImage = background;
@@ -110,6 +112,11 @@ function showInfoSong(song) {
 
 function handleMenu() {
   statusMenu = !statusMenu;
+  if (statusMenu) {
+    $app.style.width = `${widthPlaylist + widthPlayer}px`;
+  } else {
+    $app.style.width = `${widthPlayer}px`;
+  }
   toggleElement($playlist, statusMenu);
 }
 
