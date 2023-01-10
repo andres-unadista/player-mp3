@@ -19,13 +19,8 @@
       <div class="song">
         <div class="song__art-box">
           <div class="song__list">
-            <div class="song__playlist">
-              <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-              </ul>
+            <div class="song__playlist hide">
+              <ul id="playlist"></ul>
             </div>
           </div>
           <div class="song__cover">
@@ -38,17 +33,25 @@
         </div>
         <div class="song__controls-box">
           <div class="song__controls-header">
-            <h1 class="song__title">SCUMM</h1>
-            <p class="song__author">Michel</p>
+            <h1 class="song__title"></h1>
+            <p class="song__author"></p>
+          </div>
+          <div class="song__audio">
+            <audio id="audio" preload="metadata" src="" controls>
+              Your browser does not support the <code>audio</code> element.
+            </audio>
           </div>
           <div class="song__controls">
-            <span class="song__icon"><i class="fa-solid fa-backward-step"></i></span>
-            <span class="song__icon"><i class="fa-solid fa-pause"></i></span>
-            <span class="song__icon"><i class="fa-sharp fa-solid fa-forward-step"></i></span>
+            <span class="song__icon" id="backward"><i class="fa-solid fa-backward-step"></i></span>
+            <span class="song__icon" id="playback">
+              <i class="fa-solid fa-pause hide" id="pause"></i>
+              <i class="fa-solid fa-play" id="play"></i>
+            </span>
+            <span class="song__icon" id="forward"><i class="fa-sharp fa-solid fa-forward-step"></i></span>
           </div>
         </div>
         <div class="song__status-box">
-          <p class="song__description">Lorem ipsum dolor sit amet consectetur.</p>
+          <p class="song__description">"El hombre es libre en el momento que desea serlo"</p>
         </div>
       </div>
     </div>
